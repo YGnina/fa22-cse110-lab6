@@ -88,13 +88,13 @@ function initFormHandler() {
 
     //resource: https://developer.mozilla.org/en-US/docs/Web/API/FormData/entries
     for (let pair of formData.entries()) {
-      recipeObject$[`${pair[0]}`] = `${pair[1]}`;
+      recipeObject[`${pair[0]}`] = `${pair[1]}`;
     }    
 
     let recipeCard = document.createElement("recipe-card");   //B6
 
     recipeCard.data = recipeObject;         //B7
-    document.querySelector('main').appendChild(recipeCard);   //B8
+    document.querySelector("main").appendChild(recipeCard);   //B8
 
     let recipeArr = getRecipesFromStorage();//localStorage.getItem("recipes");    //B9
     recipeArr.push(recipeObject);
