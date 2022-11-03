@@ -41,7 +41,7 @@ function getRecipesFromStorage() {
  */
 function addRecipesToDocument(recipes) {
   // A10. TODO - Get a reference to the <main> element
-  const mainElem = document.querySelector("main");
+  let mainElem = document.querySelector("main");
   // A11. TODO - Loop through each of the recipes in the passed in array,
   //            create a <recipe-card> element for each one, and populate
   //            each <recipe-card> with that recipe data using element.data = ...
@@ -87,7 +87,7 @@ function initFormHandler() {
     let recipeObject = new Object();    //B5
 
     //resource: https://developer.mozilla.org/en-US/docs/Web/API/FormData/entries
-    for (const pair of formData.entries()) {
+    for (let pair of formData.entries()) {
       recipeObject$[`${pair[0]}`] = `${pair[1]}`;
     }    
 
@@ -98,7 +98,7 @@ function initFormHandler() {
 
     let recipeArr = getRecipesFromStorage();//localStorage.getItem("recipes");    //B9
     recipeArr.push(recipeObject);
-    localStorage.setItem("recipes",JSON.stringify(recipes));//recipeArr);
+    localStorage.setItem("recipes",JSON.stringify(recipeArr));//recipeArr);
 
   });
 
@@ -118,7 +118,7 @@ function initFormHandler() {
   // B11. TODO - Add a click event listener to clear local storage button
   clearB.addEventListener('click', (event) => {
     localStorage.clear();                       //B12
-    document.querySelector('main').innerHTML = "";    //B13
+    document.querySelector("main").innerHTML = "";    //B13
   });
   // Steps B12 & B13 will occur inside the event listener from step B11
   // B12. TODO - Clear the local storage
