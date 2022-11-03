@@ -98,7 +98,7 @@ function initFormHandler() {
 
     let recipeArr = localStorage.getItem("recipes");    //B9
     recipeArr.appendChild(recipeObject);
-    localStorage.setItem("recipes",recipeArr);
+    localStorage.setItem("recipes",JSON.stringify(recipes));//recipeArr);
 
   });
 
