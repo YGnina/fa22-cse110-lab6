@@ -24,8 +24,11 @@ function getRecipesFromStorage() {
   // A9. TODO - Complete the functionality as described in this function
   //           header. It is possible in only a single line, but should
   //           be no more than a few lines.
-  
-  return localStorage.getItem('recipes');
+  if(JSON.parse(localStorage.getItem('recipes')) == null){
+    return [];
+  }
+
+  return JSON.parse(localStorage.getItem('recipes'));
 
 }
 
@@ -61,6 +64,7 @@ function addRecipesToDocument(recipes) {
   }
   
 }
+
 
 /**
  * Takes in an array of recipes, converts it to a string, and then
