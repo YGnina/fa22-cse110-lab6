@@ -96,8 +96,8 @@ function initFormHandler() {
     recipeCard.data = recipeObject;         //B7
     document.querySelector('main').appendChild(recipeCard);   //B8
 
-    let recipeArr = localStorage.getItem("recipes");    //B9
-    recipeArr.appendChild(recipeObject);
+    let recipeArr = getRecipesFromStorage();//localStorage.getItem("recipes");    //B9
+    recipeArr.push(recipeObject);
     localStorage.setItem("recipes",JSON.stringify(recipes));//recipeArr);
 
   });
